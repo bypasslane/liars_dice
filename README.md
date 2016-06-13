@@ -41,16 +41,18 @@ Thus we calculate the probabilty of getting exactly 16 and add that to the proba
 
 (0.0000000000051 + 0.000000000000059) * 100 = 0.000000000516% or pretty much never.
 
-Now if we do this:
+Now if we start a new game and do this:
 
 ```
+game = Game.new(players: 4)
 game.move(player: 3, dice: 2, value: 3)
 game.move(player: 4, dice: 4, value: 3)
-game.move(player: 1, dice: 6, value: 3)
-game.move(player: 2, dice: 7, value: 3)
+game.move(player: 1, dice: 5, value: 3)
+game.move(player: 2, dice: 5, value: 3)
+game.move(player: 3, dice: 3, value: 3)
 ```
 
-There are 19 3's on the board. (Assuming all the .move calls in this document)
+There are 19 3's on the board.
 
 ```
 game.claim(dice: 20, value: 3)
